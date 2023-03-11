@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.0.4</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.pool</groupId>
+	<artifactId>spring_security_zero_to_hero</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>spring_security_zero_to_hero</name>
+	<description>Demo project for Spring Boot</description>
+    <modules>
+        <module>spring_security-jwt-token</module>
+		<module>spring_security_custom_authentication</module>
+		<module>studentpool_security</module>
+		<module>spring_security_inmemory</module>
+		<module>spring_security_authprovider</module>
+		<module>spring_security_basic</module>
+        <module>spring_security_cors</module>
+		<module>spring_security_csrf</module>
+        <module>spring_security_csrf_rest</module>
+        <module>spring_security_cust_auth_filter</module>
+        <module>spring_security_jpa_authentication</module>
+    </modules>
+    <properties>
+		<java.version>17</java.version>
+	</properties>
+</project>
