@@ -26,7 +26,13 @@
         <module>spring_security_csrf_rest</module>
         <module>spring_security_cust_auth_filter</module>
         <module>spring_security_jpa_authentication</module>
-    </modules>
+		<module>spring_security_manage_users</module>
+		<module>spring_security_multi_auth_provider</module>
+        <module>spring_security_multi_auth_providers</module>
+		<module>spring_security_oauth2_server</module>
+		<module>spring_security_userdetails_manager</module>
+		<module>spring_security_userdetails_service</module>
+	</modules>
     <properties>
 		<java.version>17</java.version>
 	</properties>
