@@ -32,6 +32,7 @@
 		<module>spring_security_oauth2_server</module>
 		<module>spring_security_userdetails_manager</module>
 		<module>spring_security_userdetails_service</module>
+		<module>microservice_spring_security</module>
 	</modules>
     <properties>
 		<java.version>17</java.version>

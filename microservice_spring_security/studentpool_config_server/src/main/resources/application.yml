@@ -1,0 +1,54 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: studentpool_config_server
+  profiles:
+    active:
+      - local
+      - prod
+      - dev
+      - git
+      - native
+  cloud:
+    config:
+      server:
+        git:
+          clone-on-start: true
+          force-pull: true
+          uri: https://github.com/shiva508/studentpool_config
+          repos:
+            studentpool_preparation:
+              clone-on-start: true
+              force-pull: true
+              pattern: studentpool_preparation*/*
+              uri: https://github.com/shiva508/studentpool_config
+              search-paths:
+                - spring-cloud-config-server-setup/{application}/{profile}
+
+            studentpool_notes:
+              pattern: studentpool_notes*/*
+              uri: https://github.com/shiva508/studentpool_config
+              search-paths:
+                - spring-cloud-config-server-setup/{application}/{profile}
+
+            studentpool_money:
+              pattern: studentpool_money*/*
+              uri: https://github.com/shiva508/studentpool_config
+              search-paths:
+                - spring-cloud-config-server-setup/{application}/{profile}
+
+management:
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+encrypt:
+  keyStore:
+    location: classpath:/studentpool.jks
+    password: kousarmd
+    alias: studentpool
+    secret: kousarmd
