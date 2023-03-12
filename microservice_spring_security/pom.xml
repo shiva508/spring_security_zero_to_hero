@@ -20,8 +20,6 @@
         <module>student_pool_friends</module>
         <module>studentpool_login_pkce</module>
         <module>studentpool_money</module>
-        <module>studentpool_notes</module>
-        <module>studentpool_preparation</module>
         <module>studentpool_presentations</module>
         <module>studentpool_remote_user_storage</module>
         <module>studentpool_resource_server</module>

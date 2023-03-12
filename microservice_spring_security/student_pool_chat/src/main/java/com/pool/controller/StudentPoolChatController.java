@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpStatus;
@@ -34,7 +33,7 @@ import com.pool.util.PkceUtil;
 
 @Controller
 public class StudentPoolChatController {
-	private List chats;
+	private List<ChatModal> chats;
 	@Autowired
 	private PkceUtil pkceUtil;
 
