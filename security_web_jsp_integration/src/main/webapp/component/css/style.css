@@ -1,0 +1,368 @@
+
+
+body {
+    color: #454545;
+    font-family: calibri;
+   }
+.fleft {
+	float:left;
+}
+.fright {
+	float:right;
+}
+.clr {
+	clear:both;
+}
+.hide_pva{display:none;}
+.show_pva{display:block;}
+.pva_flow_css .form-control{width:auto !important;}
+.pva_flow_css .form-inline .textBoxPopUp{width:auto !important;}
+#pvaImageIconTable tr{    width: 100px;  float: left;    margin-right: 10px;}
+/***************Header*******************************/
+div#headerBg {
+	background:#fff url(../images/headerBG.jpg) top left repeat-x;
+	padding:2px 0px 33px 0px;
+	width:100%;
+}
+.appName {
+	padding:5px 0px 5px 0px;
+	font-size:30px;
+	color:#377c2b;
+	font-family:sans-serif;
+}
+p.welcomeSection {
+	padding:0px;
+	margin:2px 0px 0px 0px;
+	font-size:14px;
+	color:#999999;
+	font-family:calibri;
+	border:none;
+	background:transparent;
+	width:100%;
+	float:left;
+	text-align:left !important;
+}
+p.welcomeSection span {
+	color:#377c2b;
+	/*background:url(../images/downArrow.png) right 7px no-repeat;
+	cursor:pointer;*/
+	padding:0px 0px 0px 0px;
+	font-weight:bold;
+}
+.deereLogo {
+	margin-top: 20px;
+	
+}
+nav.navbar {
+	background:#e5e6e6 url(../images/navBg.jpg) bottom left repeat-x;
+	border: none;
+	border-radius: 0px;
+	margin-bottom: 0px;
+}
+.navbar-nav > li > a {
+	padding-bottom:0px;
+	color:#555 !important;}
+.navbar-nav > li > a:link, .navbar-nav > li > a:visited, .navbar-nav > li > a:hover, .navbar-nav > li > a:active {
+	outline: none !important;}
+.dropdown:hover .dropdown-menu {display: block;}
+/*@media (max-width: 767px) {
+	dropdown-toggle:hover .dropdown-menu {display:none;}
+	.dropdown:ative .dropdown-menu {display: none !important;}
+}
+*/
+
+@media (min-width: 768px) {
+  .bs-docs-container {
+    min-height: 355px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .bs-docs-container {
+    min-height: 355px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .bs-docs-container {
+    min-height: 546px;
+  }
+}
+
+/***********************************Content Area Style***********************/
+
+.page-header {margin:0 0 20px 0; font-size: 28px; color: #454545;}
+.btn-primary {
+    background-color: #ffde00;
+    border-color: #e0c346;
+    color: #595959;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .dropdown-toggle.btn-primary {
+    background-color: #f8e41b;
+    border-color: #e0c346;
+    color: #595959;
+}
+.table-responsive div.row {margin:0px;}
+
+.form-group label:first-child {margin-left:4px;}
+.form-group label {margin-left:20px !important; min-width:75px;}
+.form-group label.labelComment {margin-left:0px !important;}
+.form-group input {margin-left:4px;}
+.form-group textarea {margin-left:4px; resize: none;}
+
+DIV.viewDownload .form-group label {margin-left:4px !important; min-width: auto !important;}
+
+.form-group button {margin-left:4px;}
+
+div.form-group .glyphicon-remove {top: 9px; font-size: 25px; margin-left:10px;}
+
+/***********************************Footer Style***********************/
+footer {
+	background:url(../images/footer_Bg.jpg) top left repeat-x;
+	width:100%;
+	float:left;
+	margin:20px 0px 0px 0px;
+	bottom:0px;
+}
+.footer {
+	padding:18px 0px 18px 0px;
+	width:100%;
+	float:left;
+	line-height:18px;
+	color:#ccc;
+}
+.footer a {
+	color:#f7f7f7;
+	padding:0px 4px;
+}
+.footer a:hover {
+	color:#ccc;
+}
+.footer a span {
+	color:#ccc;
+}
+select.min {min-width: 150px; margin-left:4px;}
+.form-group.required .control-label:after {
+  content:"*";
+  color:red;
+}
+
+.dataTable > thead > tr > th {
+   vertical-align: top;
+}
+.engTable td {
+	border: 1px solid #ddd;
+	border-bottom-width: 1px !important;
+}
+
+.form-inline .form-control {
+    width: 350px;
+}
+DIV.viewDownload .form-control {
+    width: 155px !important;
+}
+DIV.viewDownload input.min {
+    width: 172px !important;
+}
+
+.sml {max-width:150px; height:auto; max-height:150px;}
+
+/*div.table-responsive{ position:relative; }*/
+/* subsequent list items would appear over the hovered image. What we are doing is lifting our hovered item above all of them */
+table.table-bordered tbody tr td:hover
+{
+  z-index:5;
+}
+
+/* Hide bigImage and position as necessary. */
+table.table-bordered tbody tr td a img.grow {
+  width:400px;
+  height:auto;
+  max-width:400px;	
+  display:none;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  border: 10px solid #e7e7e7;  
+  box-shadow: 5px 5px 5px #666; 
+  transform: translate(-50%, -50%); 
+}
+ 
+/* table row spacing */ 
+tr.spacetr > td {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+ 
+/* When the user hovers of the link, show the bigImage */
+table.table-bordered tbody tr td a:hover img.grow
+{
+  display:block;
+}
+
+/* Reports Table Scroll */
+
+div#reportsTable div.col-sm-12 {height: 263px; overflow:auto;}
+
+
+
+
+.accordion-toggle:link, .accordion-toggle:visited, .accordion-toggle:hover, .accordion-toggle:active {display:block; outline:none}
+TH.headingCenter  {text-align: center;}
+.comment {
+    width: 255px !important;
+}
+.panel-title .glyphicon {color: #7d7d7d}
+
+.glyphicon-trash {margin-left:5px;}
+.glyphicon-tasks {margin-left:5px;}
+
+.table-panel {margin-left:16px !important;}
+.table-panel thead th {padding-left:5px !important;}
+.modal-header {background-color:#f5f5f5; color: #333;}
+.severityPop button.close {color: #000000 !important;}
+.addRow {margin : 10px 0 0 18px;}
+.addHeadersRow {margin : 0px 0 0 18px;}
+.help { margin : 0px 7px}
+.required label:after { 
+   content:"*";
+   color:red;
+}
+.col{
+float: left; width:4px;
+}
+
+TABLE.align-center TD { text-align: center !IMPORTANT; }
+TABLE.align-center TH { text-align: center !IMPORTANT;}
+
+.table-panel-view-page{margin-left:18px !important;}
+
+/* Pop Up Text Box Class */
+.form-inline .textBoxPopUp {
+    width: 342px !important;
+}
+/* Pop Up Text Box Class */
+.form .textBoxComment {   
+    margin-left:0px !important;
+    height: 250px;
+}
+
+
+/* wrapping */
+
+.tdWidth {max-width:150px !important;}
+.wrap {word-wrap: break-word;}
+.wrapWidth {max-width:850px;}
+.wrapWidthSmall {max-width:100px;}
+.wrapWidthSingleCol  {max-width:1050px;}
+
+
+DIV.scrollTab {height: 140px; overflow-y: auto;}
+DIV.scrollTabProduct {height: 128px; overflow-y: auto; overflow-x: hidden;}
+
+.icon-spacing {
+	margin : 0 10px 0px 10px; 
+}
+
+.button-disable{
+	background-color: #f7f7f7 !important;
+    border-color: #cccccc !important;
+    color: #cccccc !important;
+    cursor: default !important;	
+}
+.form-control[disabled], .form-control[readonly] {
+	background-color:#f7f7f7 !important;
+	cursor: default !important;
+}
+.button-disable:link, .button-disable:visited, .button-disable:hover,.button-disable:active {cursor: default !important;}
+
+.pagination > .disabled > a, .pagination > .disabled > a:focus, .pagination > .disabled > a:hover, .pagination > .disabled > span, .pagination > .disabled > span:focus, .pagination > .disabled > span:hover {
+cursor: default !important;}  
+div.viewDnGrid div.h4 {padding-left:4px !important;}
+
+.dataTables_wrapper div.row div.col-sm-6{padding-left: 4px;}
+
+.dataTables_wrapper div.row div.col-sm-12{padding-left: 4px;}
+
+div.viewDnGrid div.dataTables_length {width:50%; float: left; margin-bottom: 7px;}
+div.viewDnGrid div.dataTables_filter {width:50%;margin-bottom: 7px;float: right;margin-right: 122px;}
+
+.padding-zero {
+	padding : 0
+}
+.margin-left-50{
+	margin-left : 50px !important;
+}
+.position-rel-5{
+  position: relative;
+  right: 5px;
+}
+div#announceNotice{
+	float: left;
+ 	height: 360px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    word-wrap: break-word;
+}
+div#announceNotice pre {
+	padding:0 !important;
+	border:0px !important;
+	font-family: calibri !important;
+	background-color:#fff !important;
+	margin:0 !important;
+	font-size:14px !important;
+	white-space : pre-wrap;
+}
+pre.instruction {
+	padding:0 !important;
+	border:0px !important;
+	font-family: calibri !important;
+	background-color:#fff !important;
+	margin:0 !important;
+	font-size:14px !important;
+	white-space : pre-wrap;
+}
+
+#permisssion-help-container .popover{
+	width : 390px;
+	max-width : none;	
+	margin-left:100px;
+}
+#permisssion-help-container .arrow{
+	left: 25% !important;
+} 
+
+div#loading{
+               background-image: url("../images/loading.small.gif");
+               height:100%;
+               width:100%;
+               margin:0 auto;
+               position:fixed;
+               z-index:99999;
+               background-color: rgba(0, 0, 0, 0.2);
+               background-repeat:no-repeat;
+               background-position: center;
+               display:none;
+}
+
+.zoomin img {
+	width: 50px; 		 	
+	-webkit-transition: all 1s ease; 
+	-moz-transition: all 1s ease; 
+	-ms-transition: all 1s ease; 
+	-o-transition: all 1s ease; 
+	transition: all 1s ease;
+ }
+.zoomin img:hover{ 
+	-webkit-transform: translate(100px,50px) scale(5); 
+    -moz-transform: translate(100px,50px) scale(5);
+    -ms-transform: translate(100px,50px) scale(5);
+    -o-transform: translate(100px,50px) scale(5);
+    transform: translate(100px,50px) scale(5); 
+ }
+.ddTitleText img,.ddChild img{width:20% !important;}
