@@ -33,6 +33,8 @@
 		<module>spring_security_userdetails_manager</module>
 		<module>spring_security_userdetails_service</module>
 		<module>microservice_spring_security</module>
+		<module>spring_security_database</module>
+		<module>spring_security_web</module>
 	</modules>
     <properties>
 		<java.version>17</java.version>
