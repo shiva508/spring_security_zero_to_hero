@@ -1,16 +1,13 @@
 package com.pool.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "USER_PROFILE")
 public class UserProfile {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO.AUTO)
 	private Long id;
 	private String username;
 	private String password;

@@ -40,14 +40,15 @@ public class StudentpoolSecurityConfig {
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		http.csrf().disable();
-		http.authorizeRequests().antMatchers("/adduser", "/login", "/logout", "/error").permitAll().anyRequest()
-				.authenticated().and().formLogin().loginPage("/login");
+		http.authorizeHttpRequests(autz->autz.requestMatchers("/adduser", "/login", "/logout", "/error")
+						.permitAll().anyRequest().authenticated())
+				.formLogin().loginPage("/login");
 
 		return http.build();
 	}
 
 	@Bean
 	public WebSecurityCustomizer webSecurityCustomizer() {
-		return (web) -> web.ignoring().antMatchers("/images/**", "/js/**", "/webjars/**");
+		return (web) -> web.ignoring().requestMatchers("/images/**", "/js/**", "/webjars/**");
 	}
 }

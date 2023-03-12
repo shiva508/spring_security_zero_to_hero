@@ -40,7 +40,7 @@ public class CoffeSecurityConfig {
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
-		configuration.setAllowedOrigins(Arrays.asList("http://localhost:5173"));
+		configuration.setAllowedOrigins(List.of("http://localhost:5173"));
 		configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "HEAD", "OPTIONS"));
 		configuration.setAllowedHeaders(List.of("Authorization"));
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();

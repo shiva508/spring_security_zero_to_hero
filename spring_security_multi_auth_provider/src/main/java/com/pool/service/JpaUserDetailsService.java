@@ -3,6 +3,7 @@ package com.pool.service;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -15,11 +16,11 @@ import com.pool.repository.UserProfileRepository;
 import com.pool.util.StudentpoolConstents;
 
 @Service
+@Qualifier("jpaUserDetailsService")
 public class JpaUserDetailsService implements UserDetailsService {
 
-	private UserProfileRepository userProfileRepository;
+	private final UserProfileRepository userProfileRepository;
 
-	@Autowired
 	public JpaUserDetailsService(UserProfileRepository userProfileRepository) {
 		this.userProfileRepository = userProfileRepository;
 	}

@@ -13,11 +13,10 @@ import com.pool.config.handler.StudentpoolAuthenticationFailureHadler;
 @Configuration
 public class StudentpoolSecurityConfig {
 
-	private StudentpoolAuthenticationFilter authenticationFilter;
+	private final StudentpoolAuthenticationFilter authenticationFilter;
 	
-	private StudentpoolAuthenticationFailureHadler authenticationFailureHadler;
-	
-	@Autowired
+	private final StudentpoolAuthenticationFailureHadler authenticationFailureHadler;
+
 	public StudentpoolSecurityConfig(StudentpoolAuthenticationFilter authenticationFilter,
 			StudentpoolAuthenticationFailureHadler authenticationFailureHadler) {
 		this.authenticationFilter = authenticationFilter;
@@ -29,7 +28,7 @@ public class StudentpoolSecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		return http.addFilterAt(authenticationFilter, UsernamePasswordAuthenticationFilter.class)
-				.authorizeRequests()
+				.authorizeHttpRequests()
 				.anyRequest()
 				.authenticated()
 				/*
