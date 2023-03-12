@@ -1,0 +1,11 @@
+security:
+  oauth2:
+    client:
+       clientId:
+       clientSecret:
+       accessTokenUri:
+       userAuthorizationUri:
+       clientAuthenticationScheme: form
+    resource:
+      user-info-uri:
+      prefer-token-info: false 

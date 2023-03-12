@@ -35,7 +35,9 @@
 		<module>microservice_spring_security</module>
 		<module>spring_security_database</module>
 		<module>spring_security_web</module>
-	</modules>
+        <module>spring_security_dress</module>
+        <module>jwt_oauth_integration</module>
+    </modules>
     <properties>
 		<java.version>17</java.version>
 	</properties>
