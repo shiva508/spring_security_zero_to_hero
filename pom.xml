@@ -38,6 +38,7 @@
         <module>spring_security_dress</module>
         <module>jwt_oauth_integration</module>
         <module>security_web_jsp_integration</module>
+        <module>security_lamda_dsl</module>
     </modules>
     <properties>
 		<java.version>17</java.version>
