@@ -39,7 +39,8 @@
         <module>jwt_oauth_integration</module>
         <module>security_web_jsp_integration</module>
         <module>security_lamda_dsl</module>
-    </modules>
+		<module>spring_reactive_security</module>
+	</modules>
     <properties>
 		<java.version>17</java.version>
 	</properties>
