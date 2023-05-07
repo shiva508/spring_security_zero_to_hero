@@ -1,5 +1,5 @@
-package com.security.service.reports;
+package com.pool.service.reports;
 
 public interface EmployeeJasperReport {
-public String generateEmployeeReport(String reportType);
+    public String generateEmployeeReport(String reportType);
 }

@@ -1,4 +1,4 @@
-package com.security.jwt.model;
+package com.pool.jwt.model;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import java.lang.annotation.*;
 

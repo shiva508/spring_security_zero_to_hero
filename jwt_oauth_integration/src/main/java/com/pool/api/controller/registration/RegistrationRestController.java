@@ -1,4 +1,4 @@
-package com.security.api.controller.registration;
+package com.pool.api.controller.registration;
 
 public class RegistrationRestController {
 

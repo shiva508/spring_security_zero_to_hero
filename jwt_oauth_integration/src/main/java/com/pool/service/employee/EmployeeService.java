@@ -1,10 +1,9 @@
-package com.security.service.employee;
+package com.pool.service.employee;
 
 import java.util.List;
 
-import com.security.forms.RegistrationForm;
-import com.security.model.Employee;
-import com.security.model.Registration;
+import com.pool.forms.RegistrationForm;
+import com.pool.model.Employee;
 
 public interface EmployeeService {
 

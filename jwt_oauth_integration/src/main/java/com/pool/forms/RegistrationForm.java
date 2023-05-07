@@ -1,7 +1,8 @@
-package com.security.forms;
+package com.pool.forms;
+import jakarta.validation.constraints.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
-import javax.validation.constraints.NotNull;
 public class RegistrationForm {
 
 	private Integer userId;

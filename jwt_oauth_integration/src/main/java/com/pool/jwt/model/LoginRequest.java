@@ -1,5 +1,7 @@
-package com.security.jwt.model;
-import javax.validation.constraints.NotBlank;
+package com.pool.jwt.model;
+
+import jakarta.validation.constraints.NotBlank;
+
 public class LoginRequest {
 	@NotBlank
     private String usernameOrEmail;

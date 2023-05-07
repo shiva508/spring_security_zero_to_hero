@@ -1,20 +1,23 @@
-package com.security.config;
+package com.pool.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
 
-public class AppSpringSecirityInMemoryConfig extends WebSecurityConfigurerAdapter {
+public class AppSpringSecirityInMemoryConfig  {
 	@Autowired
 	private UserDetailsService userDetailsService;
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
+	@Bean
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		/*http.authorizeRequests().antMatchers("/registration/**")
 		.permitAll().anyRequest()
 		.authenticated()
@@ -31,7 +34,19 @@ public class AppSpringSecirityInMemoryConfig extends WebSecurityConfigurerAdapte
 		.exceptionHandling()
 		.accessDeniedPage("/403");*/
 	/*	http.csrf().disable();*/
-		http.authorizeRequests()
+
+		http.authorizeHttpRequests(authriz -> {
+			authriz.requestMatchers("/registraion/**").permitAll();
+			authriz.requestMatchers("/employee/**").hasRole("ADMIN");
+			authriz.anyRequest().authenticated();
+		}).formLogin(formlog->{
+			formlog.loginPage("/login").defaultSuccessUrl("/dashboard",true).permitAll(true);
+		}).logout(logout->{
+			logout.logoutSuccessUrl("/login?logout").permitAll();
+		}).exceptionHandling(exceptionHandling -> {
+			exceptionHandling.accessDeniedPage("/403");
+		});
+		/*http.authorizeRequests()
 		.antMatchers("/registraion/**")
 		.permitAll()
 		.antMatchers("/employee/**")
@@ -48,7 +63,8 @@ public class AppSpringSecirityInMemoryConfig extends WebSecurityConfigurerAdapte
         .logoutSuccessUrl("/login?logout")//our new logout success url, we are not replacing other defaults.
         .permitAll().and()
 		.exceptionHandling()
-		.accessDeniedPage("/403");//allow all as it will be accessed when user is not logged in anymore
+		.accessDeniedPage("/403");*///allow all as it will be accessed when user is not logged in anymore
+		return http.build();
 	}
 
 	/*@Bean
@@ -56,29 +72,18 @@ public class AppSpringSecirityInMemoryConfig extends WebSecurityConfigurerAdapte
 		return new BCryptPasswordEncoder();
 	}*/
 
-	@Override
-	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/components/**");
-	}
-	
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication()
-		.withUser("Shiva")
-		.password("Shiva").roles("ADMIN")
-		.and().withUser("Shiva1")
-		.password("Shiva1").
-		roles("user");
-	}
-
-	@Override
 	@Bean
-	public UserDetailsService userDetailsServiceBean() throws Exception {
-		return super.userDetailsServiceBean();
+	public WebSecurityCustomizer webSecurityCustomizer()  {
+		return web-> web.ignoring().requestMatchers("/components/**");
 	}
-
+	@Bean
+	public UserDetailsService userDetailsService(){
+		UserDetails userDetailsOne= User.withUsername("shiva").password(passwordEncoder().encode("shiva")).roles("USER").build();
+		UserDetails userDetailsTwo= User.withUsername("shivad").password(passwordEncoder().encode("shivad")).roles("ADMIN").build();
+		return new InMemoryUserDetailsManager(userDetailsOne,userDetailsTwo);
+	}
 	@Bean
 	public PasswordEncoder passwordEncoder() {
-		return NoOpPasswordEncoder.getInstance();
+		return new BCryptPasswordEncoder();
 	}
 }

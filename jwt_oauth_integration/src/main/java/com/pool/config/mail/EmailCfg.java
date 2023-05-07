@@ -1,4 +1,4 @@
-package com.security.config.mail;
+package com.pool.config.mail;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

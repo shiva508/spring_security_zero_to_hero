@@ -1,9 +1,9 @@
-package com.security.repository.registration;
+package com.pool.repository.registration;
 
 import java.util.List;
 
-import com.security.model.CachePerson;
-import com.security.model.Registration;
+import com.pool.model.CachePerson;
+import com.pool.model.Registration;
 
 public interface RegistrationDao {
 	public Registration saveUser(Registration registration);

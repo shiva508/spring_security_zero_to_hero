@@ -1,9 +1,6 @@
-package com.security.controller.jwt;
+package com.pool.controller.jwt;
 
 import java.net.URI;
-
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,16 +17,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.security.config.BCryptPasswordEncoderPro;
-import com.security.forms.RegistrationForm;
-import com.security.forms.RoleForm;
-import com.security.jwt.JwtTokenProvider;
-import com.security.jwt.model.ApiResponse;
-import com.security.jwt.model.JwtAuthenticationResponse;
-import com.security.jwt.model.LoginRequest;
-import com.security.jwt.model.SignUpRequest;
-import com.security.repository.registration.RegistrationJpa;
-import com.security.service.registration.RegistrationService;
+import com.pool.config.BCryptPasswordEncoderPro;
+import com.pool.forms.RegistrationForm;
+import com.pool.forms.RoleForm;
+import com.pool.jwt.JwtTokenProvider;
+import com.pool.jwt.model.ApiResponse;
+import com.pool.jwt.model.JwtAuthenticationResponse;
+import com.pool.jwt.model.LoginRequest;
+import com.pool.jwt.model.SignUpRequest;
+import com.pool.repository.registration.RegistrationJpa;
+import com.pool.service.registration.RegistrationService;
 
 @RestController
 @RequestMapping("/api/auth")

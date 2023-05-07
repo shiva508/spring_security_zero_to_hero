@@ -1,4 +1,4 @@
-package com.security.jwt.exception;
+package com.pool.jwt.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

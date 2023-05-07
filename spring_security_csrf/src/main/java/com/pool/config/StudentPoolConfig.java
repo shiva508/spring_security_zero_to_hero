@@ -14,8 +14,7 @@ public class StudentPoolConfig {
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		// http.csrf().disable();
-		
-		http.authorizeRequests().anyRequest().authenticated().and().formLogin().loginPage("/login") // can either be
+		http.authorizeHttpRequests().anyRequest().authenticated().and().formLogin().loginPage("/login") // can either be
 																									// mapping or file
 				.permitAll().and()
 				// logout configuration
@@ -23,7 +22,7 @@ public class StudentPoolConfig {
 				.deleteCookies("JSESSIONID").clearAuthentication(true).permitAll().and().addFilterAfter(new CsrfLoggerTokenFilter(), CsrfFilter.class);
 		
 		http.csrf((c) -> {
-			c.ignoringAntMatchers("/csrfconfigdisable/**");
+			c.ignoringRequestMatchers("/csrfconfigdisable/**");
 			c.csrfTokenRepository(new StudentpoolCsrfTokenRepository());
 		});
 		return http.build();

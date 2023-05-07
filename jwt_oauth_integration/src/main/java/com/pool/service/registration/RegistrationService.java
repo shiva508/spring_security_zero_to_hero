@@ -1,9 +1,9 @@
-package com.security.service.registration;
+package com.pool.service.registration;
 
 import java.util.List;
 
-import com.security.forms.RegistrationForm;
-import com.security.model.CachePerson;
+import com.pool.forms.RegistrationForm;
+import com.pool.model.CachePerson;
 public interface RegistrationService {
 	public RegistrationForm saveUser(RegistrationForm registrationForm);
 	public List<RegistrationForm> usersList();

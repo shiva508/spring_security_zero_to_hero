@@ -1,9 +1,9 @@
-package com.security.repository.employee;
+package com.pool.repository.employee;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.security.model.Employee;
+import com.pool.model.Employee;
 @Repository
 public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 

@@ -1,5 +1,7 @@
-package com.security.jwt.model;
-import javax.validation.constraints.*;
+package com.pool.jwt.model;
+
+import jakarta.validation.constraints.*;
+
 public class SignUpRequest {
 	@NotBlank
     @Size(min = 4, max = 40)

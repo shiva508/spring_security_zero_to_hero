@@ -1,4 +1,4 @@
-package com.security.service.registration;
+package com.pool.service.registration;
 
 import java.util.ArrayList;
 
@@ -9,13 +9,13 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.security.config.BCryptPasswordEncoderPro;
-import com.security.forms.RegistrationForm;
-import com.security.forms.RoleForm;
-import com.security.model.CachePerson;
-import com.security.model.Registration;
-import com.security.model.Role;
-import com.security.repository.registration.RegistrationJpa;
+import com.pool.config.BCryptPasswordEncoderPro;
+import com.pool.forms.RegistrationForm;
+import com.pool.forms.RoleForm;
+import com.pool.model.CachePerson;
+import com.pool.model.Registration;
+import com.pool.model.Role;
+import com.pool.repository.registration.RegistrationJpa;
 import ma.glasnost.orika.MapperFacade;
 
 @Service

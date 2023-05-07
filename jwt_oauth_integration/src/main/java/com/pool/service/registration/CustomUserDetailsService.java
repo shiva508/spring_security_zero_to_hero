@@ -1,4 +1,4 @@
-package com.security.service.registration;
+package com.pool.service.registration;
 
 import java.util.Optional;
 
@@ -9,9 +9,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.security.model.CustomUserDetails;
-import com.security.model.Registration;
-import com.security.repository.registration.RegistrationJpa;
+import com.pool.model.CustomUserDetails;
+import com.pool.model.Registration;
+import com.pool.repository.registration.RegistrationJpa;
 
 @Service
 @Transactional

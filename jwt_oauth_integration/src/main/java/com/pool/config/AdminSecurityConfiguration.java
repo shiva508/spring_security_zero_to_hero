@@ -1,28 +1,31 @@
-package com.security.config;
+package com.pool.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.http.UserDetailsServiceFactoryBean;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.www.DigestAuthenticationEntryPoint;
 import org.springframework.security.web.authentication.www.DigestAuthenticationFilter;
 
 /*@Configuration
 @Order(1)*/
-public class AdminSecurityConfiguration extends WebSecurityConfigurerAdapter {
-	 @Override
-	protected void configure(HttpSecurity http) throws Exception {
-		 http.antMatcher("/employee/**")
-		 .addFilter(authenticationFilter()).exceptionHandling()
-		 .authenticationEntryPoint( getDigetstEntryPoint())
-		 .and().authorizeRequests()
-		 .antMatchers("/employee/**").hasRole("ADMIN");
+public class AdminSecurityConfiguration  {
+
+	@Bean
+	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+		http.authorizeHttpRequests()
+				.requestMatchers("/employee/**").hasAnyRole("ADMIN")
+				.and()
+				.addFilter(authenticationFilter()).exceptionHandling()
+				.authenticationEntryPoint(getDigetstEntryPoint());
+		 return http.build();
 	}
 	public DigestAuthenticationFilter authenticationFilter() throws Exception {
 		DigestAuthenticationFilter authenticationFilter=new DigestAuthenticationFilter();
@@ -38,22 +41,16 @@ public class AdminSecurityConfiguration extends WebSecurityConfigurerAdapter {
 		entryPoint.setKey("fkksss_+");
 		return entryPoint;
 	}
-
-	@Override
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication().withUser("Shiva").password("Shiva").roles("ADMIN").and().withUser("Shiva1")
-				.password("Shiva1").roles("user");
-	}
-
-	@Override
 	@Bean
-	public UserDetailsService userDetailsServiceBean() throws Exception {
-		return super.userDetailsServiceBean();
+	public UserDetailsService userDetailsServiceBean(){
+		UserDetails userDetailsOne= User.withUsername("shiva").password(passwordEncoder().encode("shiva")).roles("USER").build();
+		UserDetails userDetailsTwo= User.withUsername("shivad").password(passwordEncoder().encode("shivad")).roles("ADMIN").build();
+		return new InMemoryUserDetailsManager(userDetailsOne,userDetailsTwo) ;
 	}
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
-		return NoOpPasswordEncoder.getInstance();
+		return new BCryptPasswordEncoder();
 	}
 	
 }

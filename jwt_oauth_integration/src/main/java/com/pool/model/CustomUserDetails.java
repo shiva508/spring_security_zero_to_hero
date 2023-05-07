@@ -1,4 +1,4 @@
-package com.security.model;
+package com.pool.model;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

@@ -1,9 +1,9 @@
-package com.security.config.mapper;
+package com.pool.config.mapper;
 
-import com.security.forms.RegistrationForm;
-import com.security.forms.RoleForm;
-import com.security.model.Registration;
-import com.security.model.Role;
+import com.pool.forms.RegistrationForm;
+import com.pool.forms.RoleForm;
+import com.pool.model.Registration;
+import com.pool.model.Role;
 
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.converter.ConverterFactory;

@@ -1,15 +1,13 @@
-package com.security.jwt;
+package com.pool.jwt;
 
 import java.util.Date;
+
+import com.pool.model.CustomUserDetails;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
-
-import com.security.model.CustomUserDetails;
-import com.security.model.Registration;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;

@@ -1,10 +1,8 @@
-package com.security.config.web;
+package com.pool.config.web;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import com.security.config.mapper.FormDomineMapper;
-
+import com.pool.config.mapper.FormDomineMapper;
 import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;

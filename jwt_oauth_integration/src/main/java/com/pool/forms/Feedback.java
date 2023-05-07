@@ -1,9 +1,9 @@
-package com.security.forms;
+package com.pool.forms;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.Email;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 public class Feedback {
 	@NotNull

@@ -1,4 +1,4 @@
-package com.security.config;
+package com.pool.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -16,9 +16,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.security.config.BeanIds;
 
-import com.security.jwt.JwtAuthenticationEntryPoint;
-import com.security.jwt.filters.JwtAuthenticationFilter;
-import com.security.service.registration.CustomUserDetailsService;
+import com.pool.jwt.JwtAuthenticationEntryPoint;
+import com.pool.jwt.filters.JwtAuthenticationFilter;
+import com.pool.service.registration.CustomUserDetailsService;
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(
@@ -32,7 +32,7 @@ public class AppSpringSecurityJWTConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
     private JwtAuthenticationEntryPoint unauthorizedHandler;
 	 @Bean
-	    public JwtAuthenticationFilter jwtAuthenticationFilter() {
+	 public JwtAuthenticationFilter jwtAuthenticationFilter() {
 	        return new JwtAuthenticationFilter();
 	    }
 

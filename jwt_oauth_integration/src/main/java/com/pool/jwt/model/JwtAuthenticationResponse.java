@@ -1,4 +1,4 @@
-package com.security.jwt.model;
+package com.pool.jwt.model;
 
 public class JwtAuthenticationResponse {
 	private String accessToken;

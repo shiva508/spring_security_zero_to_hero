@@ -1,4 +1,4 @@
-package com.security.repository.registration;
+package com.pool.repository.registration;
 
 public interface TableMetadataRepository {
 

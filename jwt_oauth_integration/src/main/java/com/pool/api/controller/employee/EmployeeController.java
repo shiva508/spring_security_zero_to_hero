@@ -1,4 +1,4 @@
-package com.security.api.controller.employee;
+package com.pool.api.controller.employee;
 
 import java.util.List;
 
@@ -11,14 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.security.forms.RegistrationForm;
-import com.security.model.Employee;import com.security.model.Registration;
-import com.security.repository.registration.RegistrationJpa;
-import com.security.service.employee.EmployeeService;
-import com.security.service.registration.CustomUserDetailsService;
-import com.security.service.registration.RegistrationService;
-import com.security.service.reports.EmployeeJasperReport;
+import com.pool.model.Employee;
+import com.pool.service.employee.EmployeeService;
+import com.pool.service.registration.CustomUserDetailsService;
+import com.pool.service.reports.EmployeeJasperReport;
 
 @RestController
 @RequestMapping("/employee")
@@ -35,11 +31,11 @@ public class EmployeeController {
 	}
 	@GetMapping("/all")
 	public ResponseEntity<List<Employee>>  employees(){
-		return new ResponseEntity<List<Employee>>(employeeService.employees(), HttpStatus.OK);
+		return new ResponseEntity<>(employeeService.employees(), HttpStatus.OK);
 	}
 	@GetMapping("/report/{reportType}")
 	public ResponseEntity<Object> generateReport(@ PathVariable("reportType") String reportType ){
-		return new ResponseEntity<Object>(employeeJasperReport.generateEmployeeReport(reportType),HttpStatus.OK);
+		return new ResponseEntity<>(employeeJasperReport.generateEmployeeReport(reportType), HttpStatus.OK);
 	}
 	@GetMapping("/useraa/{userName}")
 	public ResponseEntity<Object> findByEmail(@PathVariable("userName")String userName){

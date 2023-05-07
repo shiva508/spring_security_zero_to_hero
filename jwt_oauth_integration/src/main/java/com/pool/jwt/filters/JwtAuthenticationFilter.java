@@ -1,12 +1,12 @@
-package com.security.jwt.filters;
+package com.pool.jwt.filters;
 
 import java.io.IOException;
 
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +17,8 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.security.jwt.JwtTokenProvider;
-import com.security.model.CustomUserDetails;
-import com.security.service.registration.CustomUserDetailsService;
+import com.pool.jwt.JwtTokenProvider;
+import com.pool.service.registration.CustomUserDetailsService;
 
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	private static final Logger logger = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
