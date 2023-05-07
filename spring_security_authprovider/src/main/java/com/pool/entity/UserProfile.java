@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 @Table(name = "USER_PROFILE")
 public class UserProfile {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String username;
 	private String password;

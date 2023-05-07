@@ -1,5 +1,6 @@
 package com.pool.service;
 
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -10,16 +11,15 @@ import com.pool.model.UserProfile;
 import com.pool.repository.UserRepository;
 
 @Service
-public class ScurityUserService implements UserDetailsService {
+@AllArgsConstructor
+public class SecurityUserService implements UserDetailsService {
 
-	@Autowired
-	private UserRepository userRepository;
+	private final UserRepository userRepository;
 
 	@Override
 	@Transactional(readOnly = true)
 	public UserDetails loadUserByUsername(String username) {
 		var optionalUser = userRepository.findByUsername(username);
-
 		return optionalUser.map(UserProfile::new).orElseThrow(() -> new UsernameNotFoundException("User Not found"));
 	}
 }
