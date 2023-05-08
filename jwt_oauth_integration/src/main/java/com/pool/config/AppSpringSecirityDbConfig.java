@@ -34,11 +34,11 @@ public class AppSpringSecirityDbConfig  {
 	}
 
 	@Bean
-	public WebSecurityCustomizer configure() {
+	public WebSecurityCustomizer webSecurityCustomizer() {
 		return web->web.ignoring().requestMatchers("/components/**");
 	}
 
-	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(customUserDetailsService)
 		.passwordEncoder(passwordEncoder());
 	}

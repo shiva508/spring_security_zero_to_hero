@@ -21,7 +21,7 @@ public class StudentpoolAuthenticationProvider implements AuthenticationProvider
 		if(key.equals(secretKey)) {
 			return new StudentpoolAuthentication(true,null);
 		}else {
-			throw new BadCredentialsException("Fauled");
+			throw new BadCredentialsException("Issue with credentials Failed");
 		}
 	}
 

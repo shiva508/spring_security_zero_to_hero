@@ -16,9 +16,9 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component
-public class StudentpoolAuthenticationFailureHadler implements AuthenticationFailureHandler {
+public class StudentpoolAuthenticationFailureHandler implements AuthenticationFailureHandler {
 
-	private ObjectMapper objectMapper = new ObjectMapper();
+	private final ObjectMapper objectMapper = new ObjectMapper();
 
 	@Override
 	public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
@@ -28,7 +28,6 @@ public class StudentpoolAuthenticationFailureHadler implements AuthenticationFai
 		data.put("timestamp", Calendar.getInstance().getTime());
 		data.put("exception", exception.getMessage());
 		response.getOutputStream().println(objectMapper.writeValueAsString(data));
-
 	}
 
 }

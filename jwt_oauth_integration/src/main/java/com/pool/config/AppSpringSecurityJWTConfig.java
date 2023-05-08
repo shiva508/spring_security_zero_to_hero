@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -26,7 +26,7 @@ import com.pool.service.registration.CustomUserDetailsService;
         jsr250Enabled = true,
         prePostEnabled = true
 )
-public class AppSpringSecurityJWTConfig extends WebSecurityConfigurerAdapter {
+public class AppSpringSecurityJWTConfig {
 	@Autowired
 	private CustomUserDetailsService customUserDetailsService;
 	@Autowired
@@ -36,7 +36,7 @@ public class AppSpringSecurityJWTConfig extends WebSecurityConfigurerAdapter {
 	        return new JwtAuthenticationFilter();
 	    }
 
-	    @Override
+	    //@Override
 	    public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
 	        authenticationManagerBuilder
 	                .userDetailsService(customUserDetailsService)
@@ -44,17 +44,21 @@ public class AppSpringSecurityJWTConfig extends WebSecurityConfigurerAdapter {
 	    }
 
 	    @Bean(BeanIds.AUTHENTICATION_MANAGER)
-	    @Override
+	    //@Override
 	    public AuthenticationManager authenticationManagerBean() throws Exception {
 	        return super.authenticationManagerBean();
 	    }
 
+		public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
+			var authenticationManager = authenticationConfiguration.getAuthenticationManager();
+			return authenticationManager;
+		}
 	    @Bean
 	    public PasswordEncoder passwordEncoder() {
 	        return new BCryptPasswordEncoder();
 	    }
 
-	    @Override
+	   // @Override
 	    protected void configure(HttpSecurity http) throws Exception {
 	        http
 	                .cors()
