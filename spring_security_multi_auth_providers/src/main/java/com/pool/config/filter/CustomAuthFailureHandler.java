@@ -3,7 +3,6 @@ package com.pool.config.filter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Date;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -39,5 +38,4 @@ public class CustomAuthFailureHandler implements AccessDeniedHandler {
         objectMapper.writeValue(outputStream, httpResponse);
         outputStream.flush();
     }
-
 }

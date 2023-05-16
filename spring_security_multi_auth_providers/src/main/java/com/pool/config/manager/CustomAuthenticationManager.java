@@ -3,9 +3,7 @@ package com.pool.config.manager;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-
 import com.pool.config.provider.ApiKeyAuthenticationProvider;
-
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor

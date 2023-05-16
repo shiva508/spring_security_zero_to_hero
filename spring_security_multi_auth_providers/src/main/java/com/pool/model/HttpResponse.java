@@ -1,12 +1,9 @@
 package com.pool.model;
 
 import java.util.Date;
-
 import org.springframework.http.HttpStatus;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonFormat.Shape;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
