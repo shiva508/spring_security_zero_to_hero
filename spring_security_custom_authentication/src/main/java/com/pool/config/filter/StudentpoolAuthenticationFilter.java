@@ -5,7 +5,7 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -14,14 +14,10 @@ import com.pool.config.authentication.StudentpoolAuthentication;
 import com.pool.config.manager.StudentpoolAuthenticationManager;
 
 @Component
+@RequiredArgsConstructor
 public class StudentpoolAuthenticationFilter extends OncePerRequestFilter {
 
-	private StudentpoolAuthenticationManager authenticationManager;
-
-	@Autowired
-	public StudentpoolAuthenticationFilter(StudentpoolAuthenticationManager authenticationManager) {
-		this.authenticationManager = authenticationManager;
-	}
+	private final StudentpoolAuthenticationManager authenticationManager;
 
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
@@ -35,7 +31,7 @@ public class StudentpoolAuthenticationFilter extends OncePerRequestFilter {
 		var authenticated = authenticationManager.authenticate(studentpoolAuthentication);
 		//4.If objecte is aubtneticated send request to filter chian
 		if (authenticated.isAuthenticated()) {
-			SecurityContextHolder.getContext().setAuthentication(studentpoolAuthentication);
+			SecurityContextHolder.getContext().setAuthentication(authenticated);
 			filterChain.doFilter(request, response);
 		}else {
 			throw new BadCredentialsException("Credential issue");

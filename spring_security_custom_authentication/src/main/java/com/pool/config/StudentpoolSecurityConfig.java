@@ -11,11 +11,11 @@ import com.pool.config.filter.StudentpoolAuthenticationFilter;
 @Configuration
 public class StudentpoolSecurityConfig {
 	private final StudentpoolAuthenticationFilter authenticationFilter;
-	private final StudentpoolAuthenticationFailureHandler authenticationFailureHandler;
+	private final StudentpoolAuthenticationFailureHandler studentpoolAuthenticationFailureHandler;
 	public StudentpoolSecurityConfig(StudentpoolAuthenticationFilter authenticationFilter,
-									 StudentpoolAuthenticationFailureHandler authenticationFailureHandler) {
+									 StudentpoolAuthenticationFailureHandler studentpoolAuthenticationFailureHandler) {
 		this.authenticationFilter = authenticationFilter;
-		this.authenticationFailureHandler = authenticationFailureHandler;
+		this.studentpoolAuthenticationFailureHandler = studentpoolAuthenticationFailureHandler;
 	}
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {

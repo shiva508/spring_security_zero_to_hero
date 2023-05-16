@@ -1,0 +1,13 @@
+studentpool:
+  oauth2:
+    client:
+      name: messaging-client-oidc
+      redirecturi_2: http://127.0.0.1:8080/authorized
+      redirecturi_1: http://127.0.0.1:8080/login/oauth2/code/messaging-client-oidc
+      id: studentpool
+      secret: '{noop}studentpool'
+server:
+  port: '8000'
+
+
+
