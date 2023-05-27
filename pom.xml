@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.0.4</version>
+		<version>3.1.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.pool</groupId>
@@ -41,6 +41,8 @@
         <module>security_lamda_dsl</module>
 		<module>spring_reactive_security</module>
         <module>spring_security_session</module>
+        <module>spring_endpoint_authorization</module>
+        <module>oauth_server_app</module>
     </modules>
     <properties>
 		<java.version>17</java.version>
