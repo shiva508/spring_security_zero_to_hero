@@ -1,4 +1,4 @@
-package com.demo.user;
+package com.pool.user;
 
 public class User {
 
