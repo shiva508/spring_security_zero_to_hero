@@ -1,0 +1,16 @@
+server:
+  port: 8042
+spring:
+  rabbitmq:
+#    port: 5672
+    host: localhost
+    username: user
+    password: password
+springdoc:
+  api-docs:
+    path: /api-docs
+comrade:
+  oauth2:
+    oauth-url: http://localhost:8040/oauth2/token
+    client-id: client
+    client-secret: secret

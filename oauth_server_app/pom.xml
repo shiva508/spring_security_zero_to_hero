@@ -18,6 +18,8 @@
         <module>oauth2_authorization_server</module>
         <module>resource_server</module>
         <module>oauth_client</module>
+        <module>comrade-integration-outh-security</module>
+        <module>comrade-integration-client</module>
     </modules>
     <properties>
         <java.version>17</java.version>
