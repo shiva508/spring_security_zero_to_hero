@@ -1,8 +1,16 @@
 server:
   port: 8041
 spring:
+  security:
+    oauth2:
+      authorizationserver:
+        issuer: http://127.0.0.1:8040
   rabbitmq:
 #    port: 5672
     host: localhost
     username: user
     password: password
+comrade:
+  amqp:
+    header-name: Authorization
+    queue-name: destination-1

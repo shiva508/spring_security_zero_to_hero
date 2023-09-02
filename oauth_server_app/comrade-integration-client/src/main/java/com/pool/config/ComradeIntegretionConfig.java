@@ -11,7 +11,7 @@ import org.springframework.integration.dsl.MessageChannels;
 @Configuration
 public class ComradeIntegretionConfig {
 
-    private final String queueName="destination";
+    private final String queueName="destination-1";
 
     @Bean
     public Exchange exchange(){
