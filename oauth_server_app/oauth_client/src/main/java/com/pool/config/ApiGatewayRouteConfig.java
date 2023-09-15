@@ -8,12 +8,12 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ApiGatewayRouteConfig {
-    @Bean
+    /*@Bean
     public RouteLocator routeLocator(RouteLocatorBuilder builder){
         return builder.routes()
                 .route(rs->rs.path("/hello")
                         .filters(GatewayFilterSpec::tokenRelay)
                         .uri("http://localhost:8041/hello"))
                 .build();
-    }
+    }*/
 }

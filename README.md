@@ -32,3 +32,5 @@ MONGO_DB:sudo docker run -it -d --name mongo-container -p 27017:27017 --network 
 
 sudo systemctl stop docker
 sudo systemctl stop docker.socket
+
+# PGPASSWORD=comrade psql -U dear -h localhost postgres

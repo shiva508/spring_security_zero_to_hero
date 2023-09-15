@@ -1,0 +1,34 @@
+server:
+  port: '8040'
+
+spring:
+  datasource:
+    username: dear
+    password: comrade
+    url: jdbc:postgresql://172.19.0.2:5432/dear_comrade
+    #url: jdbc:postgresql://localhost:5432/dear_comrade
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: ALWAYS
+#  security:
+#    oauth2:
+#      authorizationserver:
+#        client:
+#          client-1:
+#            registration:
+#              client-id: client
+#              client-secret: '{bcrypt}$2a$10$jdJGhzsiIqYFpjJiYWMl/eKDOd8vdyQis2aynmFN0dgJ53XvpzzwC'
+#              authorization-grant-types: client_credentials,authorization_code,refresh_token
+#              redirect-uris: http://127.0.0.1:8042/login/oauth2/code/spring
+#              client-authentication-methods: client_secret_basic
+#              scopes: user.read,user.write,openid
+#            token:
+#              access-token-time-to-live: 3600s
+#            require-authorization-consent: 'true'
+
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        security: trace
